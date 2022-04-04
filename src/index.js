@@ -1,1 +1,3 @@
-console.log("i'm not here");
+import "../css/style.css";
+
+console.log("i'm here");
