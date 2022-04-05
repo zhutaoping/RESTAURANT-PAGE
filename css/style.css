@@ -19,14 +19,6 @@ font-family: 'Fraunces', serif;
 
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap");
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -36,12 +28,11 @@ font-family: 'Fraunces', serif;
 body {
   font-size: 18px;
   font-family: "Fraunces", serif;
-
   background-color: lightgray;
 }
 
 header {
-  height: 100vh;
+  height: 95vh;
   position: relative;
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
@@ -50,7 +41,7 @@ header {
 
 .header__logo {
   position: absolute;
-  top: 30px;
+  top: 40px;
   left: 40px;
 }
 
@@ -72,15 +63,6 @@ header {
   animation-timing-function: ease-out;
 }
 
-.header__text .arrow {
-  margin-top: 50px;
-  width: 30px;
-  animation-name: moveInBottom;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-  /* height: auto; */
-}
-
 @keyframes moveInTop {
   0% {
     opacity: 0;
@@ -93,22 +75,41 @@ header {
   }
 }
 
-@keyframes moveInBottom {
+.arrow {
+  margin-top: 50px;
+  width: 30px;
+  /* height: 18px; */
+  -webkit-animation: scroll 0.95s ease-in-out alternate infinite;
+  animation: scroll 0.95s ease-in-out alternate infinite;
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1;
+}
+
+@-webkit-keyframes scroll {
   0% {
-    opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(0);
   }
-
   100% {
-    opacity: 1;
-    transform: translate(0px);
+    transform: translateY(10px);
   }
 }
 
-.arrow:hover {
-  transform: translateY(-3px);
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 
-.arrow:active {
-  transform: translateY(-1px);
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
