@@ -25,6 +25,16 @@ font-family: 'Fraunces', serif;
   box-sizing: border-box;
 }
 
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-size: 18px;
   font-family: "Fraunces", serif;
@@ -39,10 +49,39 @@ header {
   background-position: center;
 }
 
-.header__logo {
-  position: absolute;
-  top: 40px;
-  left: 40px;
+.navbar {
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu ul {
+  width: 60vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: white;
+}
+
+nav ul li a:link,
+nav ul li a:visited {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+nav ul li a:hover {
+  color: black;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header__text {
@@ -78,14 +117,8 @@ header {
 .arrow {
   margin-top: 50px;
   width: 30px;
-  /* height: 18px; */
   -webkit-animation: scroll 0.95s ease-in-out alternate infinite;
   animation: scroll 0.95s ease-in-out alternate infinite;
-  fill: none;
-  stroke: #000000;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-  stroke-width: 1;
 }
 
 @-webkit-keyframes scroll {
@@ -110,6 +143,7 @@ header {
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
